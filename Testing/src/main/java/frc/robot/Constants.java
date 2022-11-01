@@ -14,8 +14,8 @@ package frc.robot;
  */
 public final class Constants {
     public static final class Shooter{
-        public static final int s_Leftmoter = 11;
-        public static final int s_Rightmoter = 10;
-        public static final int s_RotationalSpeed = 7;
+        public static final int s_Leftmoter = 15;
+        public static final int s_Rightmoter = 16;
+        public static final double s_RotationalSpeed = .5;
     }
 }
