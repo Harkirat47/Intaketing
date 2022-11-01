@@ -8,6 +8,7 @@ import frc.robot.Constants;
 public class Shooter extends SubsystemBase {
     WPI_TalonSRX leftMotor = new WPI_TalonSRX(Constants.Shooter.s_Leftmoter);
     WPI_TalonSRX rightMotor = new WPI_TalonSRX(Constants.Shooter.s_Rightmoter);
+    
     private MotorControllerGroup shootingMotor = new MotorControllerGroup(leftMotor, rightMotor);
     
     public Shooter() {

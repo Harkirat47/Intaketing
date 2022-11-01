@@ -18,4 +18,7 @@ public final class Constants {
         public static final int s_Rightmoter = 16;
         public static final double s_RotationalSpeed = .5;
     }
+    public static final class Drivetrain{
+        
+    }
 }
