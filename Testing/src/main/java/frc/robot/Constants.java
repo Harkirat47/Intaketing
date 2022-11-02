@@ -19,6 +19,10 @@ public final class Constants {
         public static final double s_RotationalSpeed = .5;
     }
     public static final class Drivetrain{
+        public static final int d_rfmotor = 13;
+        public static final int d_lfmotor = 11;
+        public static final int d_rbmotor = 14;
+        public static final int d_lbmotor= 12;
         
     }
 }

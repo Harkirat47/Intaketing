@@ -12,8 +12,8 @@ public class lowershoot extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final Shooter m_lowtake;
 
-   public lowshoot( Shooter lowtake) {
-    m_lowtake = lowtake;
+   public lowershoot(Shooter lowtake) {
+   m_lowtake = lowtake;
     addRequirements(lowtake);
 }
 @Override
