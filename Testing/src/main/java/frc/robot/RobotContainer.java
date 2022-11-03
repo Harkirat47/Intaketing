@@ -51,7 +51,7 @@ public class RobotContainer {
     JoystickButton A = new JoystickButton(pilot, Button.kA.value);
     JoystickButton B = new JoystickButton(pilot, Button.kB.value);
     A.whenHeld(m_upshoot);
-    B.whenHeld(m_lowshoot)
+    B.whenHeld(m_lowshoot);
   }
 
   /**
