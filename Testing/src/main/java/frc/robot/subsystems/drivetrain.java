@@ -20,8 +20,8 @@ public class drivetrain extends SubsystemBase {
         leftfrontMotor.setInverted(true);
     }
       public void SetSpeed(double speedR, double speedL) {
-        Left_motors.set(speedR);
-        Right_motors.set(speedL);
+        Left_motors.set(speedL);
+        Right_motors.set(speedR);
     } 
 
 }

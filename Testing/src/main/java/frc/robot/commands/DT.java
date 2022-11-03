@@ -32,5 +32,7 @@ public class DT extends CommandBase {
   public void execute(){
       m_subsystem.SetSpeed(Right.getAsDouble(),Left.getAsDouble());
   };
+  @Override
+  public void end(boolean interrupted) {};
 
 }
