@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import frc.robot.commands.DT;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.lowershoot;
 import frc.robot.commands.upshoot;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Shooter;
@@ -34,6 +35,8 @@ public class RobotContainer {
 
   private final upshoot m_upshoot = new upshoot(m_shooter);
 
+  private final lowershoot m_lowshoot = new lowershoot(m_shooter);
+
   private final drivetrain drive = new drivetrain();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -41,17 +44,14 @@ public class RobotContainer {
     configureButtonBindings();
   }
 
-  /** 
-   * Use this method to define your button->command mappings. Buttons can be created by
-   * instantiating a {@link GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
-   * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
-   */
+
   private void configureButtonBindings() {
     XboxController pilot = new XboxController(0);
     drive.setDefaultCommand(new DT(drive, pilot::getLeftY, pilot::getRightX));
     JoystickButton A = new JoystickButton(pilot, Button.kA.value);
+    JoystickButton B = new JoystickButton(pilot, Button.kB.value);
     A.whenHeld(m_upshoot);
+    B.whenHeld(m_lowshoot)
   }
 
   /**
