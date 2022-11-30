@@ -16,14 +16,16 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import frc.robot.Constants;
 
 public class Intake extends SubsystemBase {
-  /** Creates a new ExampleSubsystem. */
+  // creates the compressor 
   Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
+  
+  // defines a PAIR of solonoides 
   DoubleSolenoid Solinoid1 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.solonoidIdOne, Constants.Intake.solonoidIdTwo);
   DoubleSolenoid Solinoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.solonoidIdOne, Constants.Intake.solonoidIdTwo);
   CANSparkMax motor = new CANSparkMax(Constants.Intake.intakeMoter , CANSparkMaxLowLevel.MotorType.kBrushless);
 
   public Intake() {
-        
+   // enables the compressor anf also makes the compressor in its original orientation     
   pcmCompressor.enableDigital();
   pcmCompressor.enabled();
   Solinoid1.set(Value.kReverse);
@@ -32,22 +34,23 @@ public class Intake extends SubsystemBase {
   }
   
   public void goforward(){
-
+// both solonoides extend and the motor goes at the same time
     Solinoid1.set(Value.kForward);
     Solinoid2.set(Value.kForward);
     motor.set(Constants.Intake.Setspeed);
     
   }
   
-  public void gobackwards(){    
-
+  public void gobackwards(){   
+    // returns the solonoids to there original position and stops the motor
     Solinoid1.set(Value.kReverse);
     Solinoid2.set(Value.kReverse);  
-    
+    motor.set(0);
     }
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    //avtivates compressor forever
     pcmCompressor.enableDigital();
   }
 
