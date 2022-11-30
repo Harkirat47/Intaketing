@@ -38,10 +38,10 @@ public class Intake extends SubsystemBase {
     Solinoid2.set(Value.kReverse);  
     
     }
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    pcmCompressor.enableDigital();
   }
 
   @Override
