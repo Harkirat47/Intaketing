@@ -17,13 +17,14 @@ public class ExampleCommand extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
+  //create new subsystem 
   public ExampleCommand(ExampleSubsystem subsystem) {
     m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
 
-  // Called when the command is initially scheduled.
+  // Called when the command is initially scheduled within the robot.
   @Override
   public void initialize() {}
 
@@ -35,7 +36,8 @@ public class ExampleCommand extends CommandBase {
   @Override
   public void end(boolean interrupted) {}
 
-  // Returns true when the command should end.
+  // Returns true when the command should end
+  // Returns false otherwise also when commands havent been finished 
   @Override
   public boolean isFinished() {
     return false;
