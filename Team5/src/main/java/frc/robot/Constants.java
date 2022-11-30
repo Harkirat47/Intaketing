@@ -14,6 +14,10 @@ package frc.robot;
  */
 public final class Constants {
     public static final class Intake{
-        public static final int intakeMoter = 11;
+    public static final int intakeMoter = 11;
+    public static final int solonoidIdOne = 11;
+    public static final int solonoidIdTwo = 11;
+    public static final double Setspeed = .2;
+
     }
 }
