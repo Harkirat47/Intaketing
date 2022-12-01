@@ -15,7 +15,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import frc.robot.Constants;
 
-public class intake extends SubsystemBase {
+public class Intake extends SubsystemBase {
   // creates the compressor 
   Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
   
@@ -24,7 +24,7 @@ public class intake extends SubsystemBase {
   DoubleSolenoid Solinoid2 = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Intake.solonoidIdOne, Constants.Intake.solonoidIdTwo);
   CANSparkMax motor = new CANSparkMax(Constants.Intake.intakeMoter , CANSparkMaxLowLevel.MotorType.kBrushless);
 
-  public intake() {
+  public Intake() {
    // enables the compressor anf also makes the compressor in its original orientation     
   pcmCompressor.enableDigital();
   pcmCompressor.enabled();
